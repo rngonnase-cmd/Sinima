@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+/* ─────────────────────────────────────────────
+   DESIGN TOKENS  —  Sinimá v3
+   Palette: Deep Charcoal + White + Rose accent
+───────────────────────────────────────────── */
+:root {
+  /* fonts */
+  --f-display: 'Fraunces', serif;
+  --f-body:    'DM Sans', sans-serif;
+  --f-mono:    'DM Mono', monospace;
+
+  /* backgrounds */
+  --bg-base:   #111318;   /* page base */
+  --bg-card:   #191C23;   /* card surface */
+  --bg-raised: #21252F;   /* hover / raised state */
+
+  /* borders */
+  --border:    #2C3140;   /* default border */
+  --border-hi: #3D4455;   /* highlighted border */
+
+  /* rose accent — primary interactive colour */
+  --rose:      #E8385A;
+  --rose-dim:  #C22A48;
+  --rose-glow: rgba(232,56,90,0.18);
+
+  /* teal accent — secondary / watch-later */
+  --teal:      #1EC8A0;
+  --teal-dim:  rgba(30,200,160,0.15);
+
+  /* text */
+  --text:      #FFFFFF;
+  --text-sec:  #A8B0C0;   /* secondary */
+  --text-mute: #5C6478;   /* muted */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-base);
+  color: var(--text);
+  font-family: var(--f-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* scrollbar */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--rose-dim); }
+
+/* selection */
+::selection { background: var(--rose-glow); color: var(--rose); }
+
+/* ── glass nav ── */
+.glass-nav {
+  background: rgba(17,19,24,0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── movie card ── */
+.movie-card {
+  transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1),
+              box-shadow 0.28s ease,
+              border-color 0.2s ease;
+}
+.movie-card:hover {
+  transform: translateY(-6px) scale(1.018);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.55), 0 0 0 1px var(--rose-dim);
+  border-color: var(--rose-dim) !important;
+}
+.movie-card:hover .poster-img { transform: scale(1.06); }
+.poster-img { transition: transform 0.5s ease; }
+
+/* ── divider ── */
+.accent-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rose-dim), var(--rose), var(--rose-dim), transparent);
+}
+
+/* ── rose shimmer text ── */
+.rose-shimmer {
+  background: linear-gradient(90deg, var(--rose-dim) 0%, #FF6B85 40%, #FFFFFF 55%, #FF6B85 70%, var(--rose-dim) 100%);
+  background-size: 260% auto;
+  animation: shimmer 5s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@keyframes shimmer {
+  0%   { background-position: 260% center; }
+  100% { background-position: -260% center; }
+}
+
+/* ── badge ── */
+.rating-badge {
+  font-family: var(--f-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  padding: 2px 7px;
+  border-radius: 3px;
+  border: 1px solid;
+  font-weight: 500;
+}
+
+/* ── fade slide up ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up   { animation: fadeUp 0.45s ease forwards; opacity: 0; }
+.d1 { animation-delay: 0.05s; }
+.d2 { animation-delay: 0.10s; }
+.d3 { animation-delay: 0.15s; }
+.d4 { animation-delay: 0.20s; }
+.d5 { animation-delay: 0.25s; }
+.d6 { animation-delay: 0.30s; }
+
+/* ── focus ring ── */
+input:focus, select:focus, button:focus-visible {
+  outline: 2px solid var(--rose);
+  outline-offset: 2px;
+}
+
+/* ── hover utilities (avoids onMouseEnter/Leave on server components) ── */
+.nav-link        { color: var(--text-sec); transition: color 0.2s; }
+.nav-link:hover  { color: var(--text); }
+.icon-btn        { color: var(--text-mute); transition: color 0.2s; }
+.icon-btn:hover  { color: var(--rose); }
+.cast-pill       { background: var(--bg-raised); border: 1px solid var(--border); color: var(--text-sec); transition: border-color 0.2s, color 0.2s; }
+.cast-pill:hover { border-color: var(--rose); color: var(--text); }
+.back-btn        { background: rgba(17,19,24,0.8); border: 1px solid var(--border); color: var(--text-sec); backdrop-filter: blur(8px); transition: border-color 0.2s; }
+.back-btn:hover  { border-color: var(--rose); }
+.trailer-btn     { border: 1px solid rgba(30,200,160,0.4); color: var(--teal); background: transparent; transition: background 0.2s; }
+.trailer-btn:hover { background: rgba(30,200,160,0.08); }
+
+.back-btn             { background: rgba(17,19,24,0.8); border: 1px solid var(--border); color: var(--text-sec); backdrop-filter: blur(8px); transition: border-color 0.2s; }
+.back-btn:hover       { border-color: var(--rose); color: var(--text); }
+.trailer-btn          { border: 1px solid rgba(30,200,160,0.4); color: var(--teal); background: transparent; transition: background 0.2s; }
+.trailer-btn:hover    { background: rgba(30,200,160,0.08); }
+.genre-pill           { background: rgba(232,56,90,0.12); border: 1px solid rgba(232,56,90,0.3); color: var(--rose); transition: background 0.2s; }
+.genre-pill:hover     { background: rgba(232,56,90,0.22); }
+.cast-pill            { background: var(--bg-raised); border: 1px solid var(--border); color: var(--text-sec); transition: border-color 0.2s, color 0.2s; }
+.cast-pill:hover      { border-color: var(--rose); color: var(--text); }
+.related-title        { transition: color 0.2s; }
+.group:hover .related-title { color: var(--rose); }
+
+.search-input         { background: var(--bg-raised); border: 1px solid var(--border); transition: border-color 0.2s; }
+.search-input:focus   { outline: none; border-color: var(--rose); }
+.icon-btn             { color: var(--text-mute); transition: color 0.2s; }
+.icon-btn:hover       { color: var(--rose); }
+.filter-select        { background: var(--bg-raised); border: 1px solid var(--border); transition: border-color 0.2s; }
+.filter-select:focus  { outline: none; border-color: var(--rose); }
+.nav-link             { color: var(--text-sec); transition: color 0.2s; }
+.nav-link:hover       { color: var(--text); }
+.footer-link          { color: var(--text-mute); transition: color 0.2s; }
+.footer-link:hover    { color: var(--text); }
