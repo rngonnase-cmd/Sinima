@@ -11,7 +11,7 @@ export default function NotFound() {
           Film not found
         </h2>
         <p style={{ color: 'var(--text-sec)', marginBottom: '2rem' }}>
-          The reel you're looking for seems to have gone missing.
+          The reel you are looking for seems to have gone missing.
         </p>
         <Link href="/" className="px-8 py-3 rounded-lg text-sm font-semibold transition-opacity hover:opacity-90"
           style={{ background: 'var(--rose)', color: '#fff' }}>
