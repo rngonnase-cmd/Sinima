@@ -55,14 +55,14 @@ export const movies = [
     director: 'Jonathan Glazer', duration: 105,
   },
   {
-    id: '6', tmdbId: 1016084,
+    id: '6', tmdbId: 666277,
     title: 'Past Lives',
     epilogue: 'Two childhood sweethearts are separated when one emigrates from Korea. Two decades later, they reunite in New York for one fateful week.',
     dateReleased: '2023-06-02', category: 'Romance', type: 'Feature Film',
     actors: ['Greta Lee', 'Teo Yoo', 'John Magaro'],
     trailer: 'https://www.youtube.com/watch?v=kA244xewjcI',
     rating: 8.0, keywords: ['love', 'immigration', 'fate', 'Korea', 'nostalgia'], kind: 'PG-13',
-    poster: 'https://image.tmdb.org/t/p/w500/ePWKQzOnwabMcJsWYWIiy5p1Ofr.jpg', backdrop: 'https://image.tmdb.org/t/p/original/cUHxmWfkp6se0Rt10Kr86bMCYDE.jpg',
+    poster: 'https://image.tmdb.org/t/p/w500/k3waqVXSnvCZWfJYNtdamTgTtTA.jpg', backdrop: 'https://image.tmdb.org/t/p/original/7HR38hMBl23lf38MAN63y4pKsHz.jpg',
     director: 'Celine Song', duration: 106,
   },
   {
@@ -176,14 +176,14 @@ export const movies = [
     director: 'Ridley Scott', duration: 148,
   },
   {
-    id: '17', tmdbId: 1130026,
+    id: '17', tmdbId: 948549,
     title: 'Love Lies Bleeding',
     epilogue: 'A reclusive gym manager falls for a wandering bodybuilder, and their relationship spirals into violent obsession and dark family secrets.',
     dateReleased: '2024-03-08', category: 'Thriller', type: 'Feature Film',
     actors: ['Kristen Stewart', "Katy O'Brian", 'Ed Harris', 'Jena Malone'],
     trailer: 'https://www.youtube.com/watch?v=BF_J3-DmiS0',
     rating: 7.3, keywords: ['neo-noir', 'bodybuilding', 'obsession', '1980s', 'crime'], kind: 'R',
-    poster: 'https://image.tmdb.org/t/p/w500/r7Fl8QmuLziE7BgT1gU3hZyEZQI.jpg', backdrop: 'null',
+    poster: 'https://image.tmdb.org/t/p/original/dHvT7wCdG3Iwx44rpw5Z5VqYFAe.jpg', backdrop: 'https://image.tmdb.org/t/p/original/hAS9WqMIOBwAabzmEFrJyXjWJbM.jpg',
     director: 'Rose Glass', duration: 104,
   },
   {
